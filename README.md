@@ -6,7 +6,7 @@ Gen-Z Health adalah platform web sederhana yang dirancang untuk membantu generas
 
 📁 Struktur Proyek
 
-📦 genz-health/
+📦 genz-health
 ├── index.html             → Halaman login
 ├── register.html          → Halaman registrasi
 ├── home.html              → Halaman utama setelah login
