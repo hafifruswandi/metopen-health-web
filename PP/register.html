@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daftar - Gen-Z Health</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(12px);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+    h2 {
+      color: #e65100;
+    }
+    input, button {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.6rem 0;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+    input {
+      background-color: rgba(255,255,255,0.8);
+    }
+    button {
+      background-color: #fb8c00;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #f57c00;
+    }
+    .error-message {
+      color: red;
+      font-size: 0.9rem;
+    }
+    a {
+      color: #e65100;
+      text-decoration: none;
+    }
+
+    a:hover {
+        color: aliceblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Daftar Akun Baru 📝</h2>
+    <input type="text" id="newUsername" placeholder="Username baru" />
+    <input type="password" id="newPassword" placeholder="Password" />
+    <div id="error" class="error-message"></div>
+    <button onclick="register()">Daftar</button>
+    <section>Sudah Punya Akun?<a href="index.html"> Masuk Disini!</a></section>
+  </div>
+
+  <script>
+    function register() {
+      const newUsername = document.getElementById('newUsername').value.trim();
+      const newPassword = document.getElementById('newPassword').value;
+      const error = document.getElementById('error');
+
+      if (!newUsername || !newPassword) {
+        error.textContent = "Isi kolom yang kosong.";
+        return;
+      }
+
+      let users = JSON.parse(localStorage.getItem('users') || '{}');
+
+      if (users[newUsername]) {
+        error.textContent = "Username sudah terdaftar!";
+        return;
+      }
+
+      users[newUsername] = newPassword;
+      localStorage.setItem('users', JSON.stringify(users));
+      alert("Akun berhasil dibuat! Silakan login.");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

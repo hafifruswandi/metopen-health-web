@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Monitoring Kesehatan</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .monitoring-section {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      margin-top: 2rem;
+    }
+
+    .monitor-card {
+      background: linear-gradient(to bottom right, #ffe5f0, #f0faff);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(255, 200, 230, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .monitor-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(255, 200, 230, 0.4);
+    }
+
+    .monitor-card h3 {
+      color: #3a3a3a;
+      margin-bottom: 0.5rem;
+    }
+
+    .monitor-card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      background-color: white;
+      color: #ff8fa3;
+      font-size: 1.4rem;
+      font-weight: bold;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 36px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(255, 200, 230, 0.5);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .close-button:hover {
+      background-color: #ffe5f0;
+      transform: scale(1.1);
+    }
+
+    header {
+      position: relative;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="glass-container">
+    <header>
+      <a href="index.html" class="close-button">✕</a>
+      <h1>📊 Pantau Kondisi Kesehatan</h1>
+      <p>Lihat statistik kesehatan kamu secara real-time</p>
+    </header>
+
+    <section class="monitoring-section">
+      <div class="monitor-card">
+        <h3>Detak Jantung</h3>
+        <p>82 BPM (normal)</p>
+      </div>
+      <div class="monitor-card">
+        <h3>Tekanan Darah</h3>
+        <p>120/80 mmHg</p>
+      </div>
+      <div class="monitor-card">
+        <h3>Kualitas Tidur</h3>
+        <p>7 jam 15 menit - Baik</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Gen-Z Health. Dibuat oleh King Cháth 👑</p>
+    </footer>
+  </div>
+</body>
+</html>

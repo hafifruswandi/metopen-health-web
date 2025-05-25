@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gen-Z Health</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <div class="glass-container">
+    <header>
+      <h1>💖 Gen-Z Health Portal</h1>
+      <p>Platform kesehatan modern untuk generasi masa kini</p>
+    </header>
+
+                    <!-- Profile Start-->
+
+    <div class="profile-menu" style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
+        <button onclick="toggleMenu()" style="background-color: #ff8fa3; color: white; border: none; border-radius: 8px; padding: 10px 15px; cursor: pointer;">👤</button>
+            <div id="dropdownMenu" style="display: none; position: absolute; right: 0; margin-top: 10px; background-color: white; border-radius: 10px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); overflow: hidden; min-width: 160px;">
+            <div style="padding: 12px 16px; border-bottom: 1px solid #ddd;">👋 Halo, <span id="usernameDisplay"></span></div>
+        <button onclick="showProfile()" style="width: 100%; padding: 12px 16px; border: none; background: none; text-align: left; cursor: pointer;">👁️ Lihat Profil</button>
+        <button onclick="logout()" style="width: 100%; padding: 12px 16px; border: none; background: none; text-align: left; color: red; cursor: pointer;">🔓 Logout</button>
+  </div>
+</div>
+
+    <div id="profilePopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  background: rgba(255,255,255,0.2); backdrop-filter: blur(12px); padding: 2rem; border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2); text-align: center; width: 90%; max-width: 400px; z-index: 2000;">
+    <h2>👤 Profil Kamu</h2>
+      <p>Username: <span id="profileUsername"></span></p>
+        <button onclick="toggleProfile()" style="margin-top: 1rem; padding: 10px 20px; background-color: crimson; color: white; border: none; border-radius: 10px;">Tutup</button>
+</div>
+
+    <script>
+  if (localStorage.getItem('isLoggedIn') !== 'true') {
+    window.location.href = "index.html";
+  }
+
+  const username = localStorage.getItem('currentUser');
+  document.getElementById('usernameDisplay').textContent = username || "User";
+
+  function toggleMenu() {
+    const menu = document.getElementById('dropdownMenu');
+    menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
+  }
+
+  function showProfile() {
+    toggleMenu();
+    toggleProfile();
+  }
+
+  function toggleProfile() {
+    const popup = document.getElementById('profilePopup');
+    const span = document.getElementById('profileUsername');
+    span.textContent = username || 'Tidak diketahui';
+    popup.style.display = (popup.style.display === 'none' || popup.style.display === '') ? 'block' : 'none';
+  }
+
+  function logout() {
+  const konfirmasi = confirm("Apakah Anda yakin ingin logout?");
+  if (konfirmasi) {
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('currentUser');
+    window.location.href = "index.html";
+  }
+}
+
+  // Klik di luar menu akan menutup menu
+  window.addEventListener('click', function(e) {
+    const menu = document.getElementById('dropdownMenu');
+    if (!e.target.closest('.profile-menu')) {
+      menu.style.display = 'none';
+    }
+  });
+</script>
+
+              <!-- Profile End-->
+
+    <section class="features">
+      <div class="feature-card" onclick="showArticles()">
+        <img src="assets/icon-health.png" alt="Artikel"/>
+        <h3>Artikel</h3>
+        <p>Cek tips, info, & tren kesehatan terbaru.</p>
+      </div>
+      
+
+      <div class="feature-card" onclick="window.location.href='monitoring.html'">
+        <img src="assets/icon-monitor.png" alt="Monitoring"/>
+        <h3>Pantau</h3>
+        <p>Monitor kondisi fisik kamu secara real-time.</p>
+      </div>
+    </section>
+
+    <section class="articles-section" id="articles-section" style="display: none;">
+      <h2>📚 Artikel Kesehatan</h2>
+      <div class="article-list" id="article-list"></div>
+    </section>
+    
+
+    <footer>
+      <p>&copy; 2025 Gen-Z Health. Dibuat oleh King Cháth 👑</p>
+    </footer>
+  </div>
+
+  <!-- Floating Chat Button -->
+  <div class="chat-button" onclick="toggleChat()">
+    <img src="assets/icon-chat.png" alt="Chatbot">
+  </div>
+
+  <!-- Chatbox -->
+  <div class="chatbox" id="chatbox">
+    <div class="chat-header">
+      <span>Gen-Z HealthBot 🤖</span>
+      <div class="chat-header-buttons">
+        <button onclick="clearChat()" class="close-btn">🗑️</button>
+        <button onclick="toggleChat()" class="delete-btn">✕</button>
+      </div>
+    </div>
+    <div class="chat-content" id="chat-content">
+      <div class="chat-bot">Halo! Aku HealthBot. Ada yang bisa kubantu?</div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Tulis pesan...">
+      <button onclick="sendMessage()">Kirim</button>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
