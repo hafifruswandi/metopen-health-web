@@ -5,8 +5,8 @@
 <p>📌 Belum tersedia online. Jalankan secara lokal menggunakan browser.</p>
 
 <h2>🔑 Fitur Utama</h2>
--> Login dan Register
--> Profil Pengguna
--> Artikel Kesehatan
--> Monitoring Kesehatan (detak jantung, tekanan darah, kualitas tidur)
--> Chatbot Interaktif (Dummy)
+-> Login dan Register<br>
+-> Profil Pengguna<br>
+-> Artikel Kesehatan<br>
+-> Monitoring Kesehatan (detak jantung, tekanan darah, kualitas tidur)<br>
+-> Chatbot Interaktif (Dummy)<br>
