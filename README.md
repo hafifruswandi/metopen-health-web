@@ -4,23 +4,6 @@ Gen-Z Health adalah platform web sederhana yang dirancang untuk membantu generas
 🌐 Demo
 📌 Belum tersedia online. Jalankan secara lokal menggunakan browser.
 
-📁 Struktur Proyek
-
-📦 genz-health
-├── index.html             → Halaman login
-├── register.html          → Halaman registrasi
-├── home.html              → Halaman utama setelah login
-├── monitoring.html        → Halaman pemantauan kesehatan
-├── css/
-│   └── style.css          → (Opsional) Styling tambahan
-├── js/
-│   └── script.js          → (Opsional) Script chatbot
-├── assets/
-│   ├── icon-health.png
-│   ├── icon-monitor.png
-│   └── icon-chat.png
-└── README.md              → Deskripsi proyek ini
-
 🔑 Fitur Utama
 - Login dan Register
 - Validasi Login via LocalStorage
