@@ -6,7 +6,6 @@ Gen-Z Health adalah platform web sederhana yang dirancang untuk membantu generas
 
 🔑 Fitur Utama
 - Login dan Register
-- Validasi Login via LocalStorage
 - Profil Pengguna
 - Artikel Kesehatan
 - Monitoring Kesehatan (detak jantung, tekanan darah, kualitas tidur)
