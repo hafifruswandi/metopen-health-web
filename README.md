@@ -4,9 +4,9 @@
 <h2>🌐 Demo</h2>
 <p>📌 Belum tersedia online. Jalankan secara lokal menggunakan browser.</p>
 
-<h3>🔑 Fitur Utama</h3>
-<ul>Login dan Register</ul>
-<ul>Profil Pengguna</ul>
-<ul>Artikel Kesehatan</ul>
-<ul>Monitoring Kesehatan (detak jantung, tekanan darah, kualitas tidur)</ul>
-<ul>Chatbot Interaktif (Dummy)</ul>
+<h2>🔑 Fitur Utama</h2>
+<ul>- Login dan Register</ul>
+<ul>- Profil Pengguna</ul>
+<ul>- Artikel Kesehatan</ul>
+<ul>- Monitoring Kesehatan (detak jantung, tekanan darah, kualitas tidur)</ul>
+<ul>- Chatbot Interaktif (Dummy)</ul>
